@@ -1,0 +1,6 @@
+/Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles/geneticSudokuSolve.dir
+/Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles/edit_cache.dir
+/Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles/rebuild_cache.dir
+/Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src/CMakeFiles/genSudoSolver.dir
+/Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src/CMakeFiles/edit_cache.dir
+/Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src/CMakeFiles/rebuild_cache.dir
