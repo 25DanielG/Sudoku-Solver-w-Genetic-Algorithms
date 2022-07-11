@@ -10,15 +10,15 @@ namespace genSudoSolver {
         int fitnessScore;
     };
     // Defines all the necessary parameters for the genetic algorithm
-    void geneticSolver(int pop_size, int s_rate, int ran_s_rate, int num_children, int max_num_generations, int mutation_rate, int n_restart_after, vector<vector<int> > board, int boardSize);
+    bool geneticSolver(int pop_size, int s_rate, int ran_s_rate, int num_children, int max_num_generations, int mutation_rate, int n_restart_after, vector<vector<int> > board, int boardSize);
     // Function to create the initial population of puzzles
     vector<boardFitness> makeInitialPopulation(int pop_size, vector<vector<int> > board, int boardSize);
     // Function to make the next population
-    vector<genSudoSolver::boardFitness> genSudoSolver::formSubsequentPopulation(int pop_size, int s_rate, int ran_s_rate, vector<genSudoSolver::boardFitness> prevPopulation, vector<vector<int> > board, int boardSize);
+    vector<genSudoSolver::boardFitness> formSubsequentPopulation(int pop_size, int s_rate, int ran_s_rate, vector<genSudoSolver::boardFitness> prevPopulation, vector<vector<int> > board, int boardSize, int nb_children);
     // Selects the parents for the next generation
-    vector<genSudoSolver::boardFitness> genSudoSolver::selectParents(int s_rate, int ran_s_rate, vector<genSudoSolver::boardFitness> prevPopulation, vector<vector<int> > board, int boardSize);
+    vector<genSudoSolver::boardFitness> selectParents(int s_rate, int ran_s_rate, vector<genSudoSolver::boardFitness> prevPopulation, vector<vector<int> > board, int boardSize);
     // Makes children from two parents
-    vector<vector<int> > genSudoSolver::makeChild(vector<vector<int> > parentOne, vector<vector<int> > parentTwo, vector<vector<int> > initialBoard, int boardSize, int nb_children);
+    vector<vector<int> > makeChild(vector<vector<int> > parentOne, vector<vector<int> > parentTwo, vector<vector<int> > initialBoard, int boardSize, int nb_children);
     bool numberInColumn(const int boardSize, vector<vector<int> > board, int c, int n); // checks if a number is in the column
     bool numberInRow(const int boardSize, vector<vector<int> > board, int r, int n); // checks if a number is in the row
     bool numberInBox(vector<vector<int> > board, int startR, int startC, int n); // checks if a number is in the box
