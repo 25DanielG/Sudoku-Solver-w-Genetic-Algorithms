@@ -1,10 +1,12 @@
 #include <iostream>
 #include <vector>
+#include <chrono>
 #include "./src/genSudoSolver.h"
 using std::cout;
 using std::endl;
 using std::vector;
 using std::cin;
+using namespace std::chrono;
 const int boardSize = 9; // 3x3 box grid
 int main() {
     vector<vector<int> > initialBoard(boardSize, vector<int>(boardSize, 0));
@@ -15,8 +17,12 @@ int main() {
             initialBoard[i][j] = tmp; // There must be zeros for unfilled slots
         }
     }
-    cout << "Entered genetic algorithm." << endl;
-    while(!genSudoSolver::geneticSolver(5000, 1250, 1250, 4, 1250, 30, initialBoard, boardSize));
+    //                                          25%   25%    10%
+    auto start = high_resolution_clock::now();
+    while(!genSudoSolver::geneticSolver(10000, 2500, 2500, 4, 10, 30, 300, initialBoard, boardSize));
+    auto end = high_resolution_clock::now();
+    auto duration = duration_cast<seconds>(end - start);
+    cout << "Time taken for solution: " << duration.count() << " seconds." << endl;
 }
 /*
 0 0 0 2 6 0 7 0 1
