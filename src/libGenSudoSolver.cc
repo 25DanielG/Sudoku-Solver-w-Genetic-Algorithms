@@ -6,27 +6,14 @@
 using std::vector;
 using std::cout;
 using std::endl;
-bool genSudoSolver::geneticSolver(int pop_size, int s_rate, int ran_s_rate, int num_children, int mutation_rate, int n_restart_after, int max_generation_number, vector<vector<int> > board, int boardSize) {
+bool genSudoSolver::geneticSolver(const int pop_size, const int s_rate, const int ran_s_rate, const int num_children, const int mutation_rate, const int n_restart_after, const int max_generation_number, const vector<vector<int> > board, const int boardSize, int numRestarts) {
     cout << "Entered genetic algorithm." << endl;
     int generationNumber = 0, prevMaxFitness = 0, prevMaxGeneration = 0;
     vector<boardFitness> currentPopulation = makeInitialPopulation(pop_size, board, boardSize);
     ++generationNumber;
-    cout << "Made initial population." << endl << "Example of two generated boards:" << endl;
-    for(int i = 0; i < boardSize; ++i) {
-        for(int j = 0; j < boardSize; ++j) {
-            cout << currentPopulation[0].singleBoard[i][j] << " ";
-        }
-        cout << endl;
-    }
-    cout << endl;
-    for(int i = 0; i < boardSize; ++i) {
-        for(int j = 0; j < boardSize; ++j) {
-            cout << currentPopulation[1].singleBoard[i][j] << " ";
-        }
-        cout << endl;
-    }
+    cout << "Made initial population." << endl;
     while(true) {
-        if(generationNumber >= max_generation_number) {
+        if(generationNumber >= max_generation_number) { // Restarts after hard cap on generations
             cout << "Restarting since " << max_generation_number << " generations reached." << endl;
         }
         for(auto &v : currentPopulation) {
@@ -37,7 +24,7 @@ bool genSudoSolver::geneticSolver(int pop_size, int s_rate, int ran_s_rate, int 
         if(currentPopulation[0].fitnessScore > prevMaxFitness) {
             prevMaxFitness = currentPopulation[0].fitnessScore;
             prevMaxGeneration = generationNumber;
-        } else if(generationNumber - prevMaxFitness >= n_restart_after) {
+        } else if(generationNumber - prevMaxFitness >= n_restart_after) { // Restarts after # of generations w/out improvement
             cout << "Restarting after " << n_restart_after << " generations without improvement." << endl;
             return false;
         }
@@ -51,14 +38,14 @@ bool genSudoSolver::geneticSolver(int pop_size, int s_rate, int ran_s_rate, int 
             }
             return true;
         }
-        cout << "Generation number: " << generationNumber << "; Best fitness level: " << currentPopulation[0].fitnessScore << "; Worst fitness level: " << currentPopulation[currentPopulation.size() - 1].fitnessScore << " Pop size: " << currentPopulation.size() << endl;
+        cout << "Generation number: " << generationNumber << "; Number of restarts: " << numRestarts << "; Best fitness level: " << currentPopulation[0].fitnessScore << "; Worst fitness level: " << currentPopulation[currentPopulation.size() - 1].fitnessScore << "; Pop size: " << currentPopulation.size() << endl;
         currentPopulation = formSubsequentPopulation(pop_size, s_rate, ran_s_rate, currentPopulation, board, boardSize, num_children, mutation_rate);
         cout << "Formed subsequent population." << endl;
         ++generationNumber;
     }
 }
 
-vector<genSudoSolver::boardFitness> genSudoSolver::makeInitialPopulation(int pop_size, vector<vector<int> > board, int boardSize) { // Makes the initial population
+vector<genSudoSolver::boardFitness> genSudoSolver::makeInitialPopulation(const int pop_size, const vector<vector<int> > board, const int boardSize) { // Makes the initial population
     vector<boardFitness> population(pop_size);
     vector<int> availableNumbers(boardSize, 0); // vector containing the available numbers
     for(int i = 1; i <= boardSize; ++i) {
@@ -102,28 +89,7 @@ vector<genSudoSolver::boardFitness> genSudoSolver::makeInitialPopulation(int pop
     return population;
 }
 
-/*vector<genSudoSolver::boardFitness> genSudoSolver::makeInitialPopulation(int pop_size, vector<vector<int> > board, int boardSize) { // Makes the initial population
-    vector<boardFitness> population(pop_size);
-    for(int pop = 0; pop < pop_size; ++pop) { // Loop to generate initial population size
-        population[pop].singleBoard = board;
-        for(int i = 0; i < boardSize; ++i) {
-            for(int j = 0; j < boardSize; ++j) {
-                if(population[pop].singleBoard[i][j] == 0) {
-                    std::random_device ranDevice; // Generates the random numbers to constantly make a different sudoku
-                    std::mt19937 gen2(ranDevice());
-                    std::uniform_int_distribution<int> boardDist(1, 9);
-                    int tmp = boardDist(gen2); // make array of elements left and choose out of them
-                    if(!numberInBox(population[pop].singleBoard, i - i % 3, j - j % 3, tmp))
-                        population[pop].singleBoard[i][j] = tmp;
-                    else --j; // restart the part of that loop to generate a better number that has no repetition in each box
-                }
-            }
-        }
-    }
-    return population;
-}*/
-
-vector<genSudoSolver::boardFitness> genSudoSolver::formSubsequentPopulation(int pop_size, int s_rate, int ran_s_rate, vector<genSudoSolver::boardFitness> prevPopulation, vector<vector<int> > board, int boardSize, int nb_children, int mutation_rate) { // Makes the next population
+vector<genSudoSolver::boardFitness> genSudoSolver::formSubsequentPopulation(const int pop_size, const int s_rate, const int ran_s_rate, vector<boardFitness> prevPopulation, const vector<vector<int> > board, const int boardSize, const int nb_children, const int mutation_rate) { // Makes the next population
     vector<genSudoSolver::boardFitness> parents = selectParents(s_rate, ran_s_rate, prevPopulation, board, boardSize);
     cout << "Selected parents for subsequent generation." << endl;
     vector<genSudoSolver::boardFitness> children(pop_size);
@@ -137,16 +103,13 @@ vector<genSudoSolver::boardFitness> genSudoSolver::formSubsequentPopulation(int 
     return children;
 }
 
-vector<genSudoSolver::boardFitness> genSudoSolver::selectParents(int s_rate, int ran_s_rate, vector<genSudoSolver::boardFitness> prevPopulation, vector<vector<int> > board, int boardSize) { // Selects the parents for the next generation
+vector<genSudoSolver::boardFitness> genSudoSolver::selectParents(const int s_rate, const int ran_s_rate, vector<boardFitness> prevPopulation, const vector<vector<int> > board, const int boardSize) { // Selects the parents for the next generation
     vector<genSudoSolver::boardFitness> selectedParents; // Requires the previous population that is already sorted
-    cout << "Initial make parents pop size: " << prevPopulation.size() << endl;
     for(int i = 0; i < s_rate; ++i) {
         // Chooses the most fit parents
         selectedParents.push_back(prevPopulation[i]);
         prevPopulation.erase(prevPopulation.begin());
     }
-    cout << "Selected the best parents." << endl;
-    cout << "After selected parents pop size: " << prevPopulation.size() << endl;
     for(int i = 0; i < ran_s_rate; ++i) {
         // Chooses some parents randomly
         std::random_device ranDevice; // Generates the random numbers to constantly make a different sudoku
@@ -157,12 +120,10 @@ vector<genSudoSolver::boardFitness> genSudoSolver::selectParents(int s_rate, int
         selectedParents.push_back(prevPopulation[tmp]);
         prevPopulation.erase(prevPopulation.begin() + tmp);
     }
-    cout << "Selected the randomized parents." << endl;
-    cout << "After randomized parents pop size: " << prevPopulation.size() << endl;
     return selectedParents;
 }
 
-vector<vector<int> > genSudoSolver::makeChild(vector<vector<int> > parentOne, vector<vector<int> > parentTwo, vector<vector<int> > initialBoard, int boardSize, int nb_children, int mutation_rate) { // Makes children from two parents
+vector<vector<int> > genSudoSolver::makeChild(vector<vector<int> > parentOne, vector<vector<int> > parentTwo, const vector<vector<int> > board, const int boardSize, const int nb_children, const int mutation_rate) { // Makes children from two parents
     vector<int> genes(boardSize, 0);
     for(int i = 0; i < boardSize; ++i) {
         std::random_device ranDevice; // Generates the random numbers to constantly make a different sudoku
@@ -203,33 +164,7 @@ vector<vector<int> > genSudoSolver::makeChild(vector<vector<int> > parentOne, ve
     return child;
 }
 
-/*
-0, 1, 2     3, 4, 5     6, 7, 8
--------------------------------
-1, 2, 3,    4, 5, 6,    7, 8, 9
-1, 2, 3,    4, 5, 6,    7, 8, 9
-1, 2, 3,    4, 5, 6,    7, 8, 9
-
-1, 2, 3,    4, 5, 6,    7, 8, 9
-1, 2, 3,    4, 5, 6,    7, 8, 9
-1, 2, 3,    4, 5, 6,    7, 8, 9
-
-1, 2, 3,    4, 5, 6,    7, 8, 9
-1, 2, 3,    4, 5, 6,    7, 8, 9
-1, 2, 3,    4, 5, 6,    7, 8, 9
-
-0, 1, 2
-if index % 3 == 0 restart
-some way to tell where to start
-horizontal start (boxes: 1, 2, 3)
-column start (columns: 1, 2, 3)
-
-if(horizontal start gets bigger than boadSize / 3 (9 / 3) == 3)
-then move one vertical down
-if vertical gets bigger than boardSize / 3 (9 / 3) == 3 then you are done
-*/
-
-vector<vector<int> > genSudoSolver::mutateChild(vector<vector<int> > child, int boardSize) { // Mutates the child   
+vector<vector<int> > genSudoSolver::mutateChild(vector<vector<int> > child, const int boardSize) { // Mutates the child
     std::random_device ranDevice; // Generates the random numbers to constantly make a different sudoku
     std::mt19937 gen2(ranDevice());
     std::uniform_int_distribution<int> boardDist(0, 8);
@@ -245,14 +180,14 @@ vector<vector<int> > genSudoSolver::mutateChild(vector<vector<int> > child, int 
     return child;
 }
 
-vector<vector<int> > genSudoSolver::swapTwoElements(int rowIndexOne, int colIndexOne, int rowIndexTwo, int colIndexTwo, vector<vector<int> > first) { // Swaps to elements in 2d vectors
+vector<vector<int> > genSudoSolver::swapTwoElements(const int rowIndexOne, const int colIndexOne, const int rowIndexTwo, const int colIndexTwo, vector<vector<int> > first) { // Swaps to elements in 2d vectors
     int tmp = first[rowIndexOne][colIndexOne];
     first[rowIndexOne][colIndexOne] = first[rowIndexTwo][colIndexTwo];
     first[rowIndexTwo][colIndexTwo] = tmp;
     return first;
 }
 
-bool genSudoSolver::numberInColumn(const int boardSize, vector<vector<int> > board, int row, int col, int n) { // checks if a number is in the column
+bool genSudoSolver::numberInColumn(const int boardSize, const vector<vector<int> > board, const int row, const int col, const int n) { // checks if a number is in the column
     for(int r = 0; r < boardSize; ++r) {
         if(r == row) continue;
         if(board[r][col] == n) return true;
@@ -260,7 +195,7 @@ bool genSudoSolver::numberInColumn(const int boardSize, vector<vector<int> > boa
     return false;
 }
 
-bool genSudoSolver::numberInRow(const int boardSize, vector<vector<int> > board, int row, int col, int n) { // checks if a number is in the row
+bool genSudoSolver::numberInRow(const int boardSize, const vector<vector<int> > board, const int row, const int col, const int n) { // checks if a number is in the row
     for(int c = 0; c < boardSize; ++c) {
         if(c == col) continue;
         if(board[row][c] == n) return true;
@@ -268,7 +203,7 @@ bool genSudoSolver::numberInRow(const int boardSize, vector<vector<int> > board,
     return false;
 }
 
-bool genSudoSolver::numberInBox(vector<vector<int> > board, int startR, int startC, int n) { // checks if a number is in the box
+bool genSudoSolver::numberInBox(const vector<vector<int> > board, const int startR, int startC, int n) { // checks if a number is in the box
     for(int r = startR; r < startR + 3; ++r) {
         for(int c = startC; c < startC + 3; ++c) {
             if(board[r][c] == n) return true;
@@ -277,11 +212,11 @@ bool genSudoSolver::numberInBox(vector<vector<int> > board, int startR, int star
     return false;
 }
 
-bool genSudoSolver::isLegalPlacement(int row, int col, int value, int boardSize, vector<vector<int> > board) { // check if you can put a number
+bool genSudoSolver::isLegalPlacement(const int row, const int col, const int value, const int boardSize, const vector<vector<int> > board) { // check if you can put a number
     return (!numberInColumn(boardSize, board, row, col, value) && !numberInRow(boardSize, board, row, col, value) && !numberInBox(board, row - row % 3, col - col % 3, value));
 }
 
-int genSudoSolver::calculateFitness(vector<vector<int> > board, int boardSize) {
+int genSudoSolver::calculateFitness(const vector<vector<int> > board, const int boardSize) {
     int fitness = 0;
     for(int i = 0; i < boardSize; ++i) {
         for(int j = 0; j < boardSize; ++j) {
@@ -292,6 +227,6 @@ int genSudoSolver::calculateFitness(vector<vector<int> > board, int boardSize) {
     }
     return fitness;
 }
-bool genSudoSolver::compareFunction(genSudoSolver::boardFitness a, genSudoSolver::boardFitness b) { // Compare function to sort
+bool genSudoSolver::compareFunction(const genSudoSolver::boardFitness a, const genSudoSolver::boardFitness b) { // Compare function to sort
     return a.fitnessScore > b.fitnessScore;
 }

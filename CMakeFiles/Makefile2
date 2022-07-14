@@ -98,12 +98,12 @@ src/clean: src/CMakeFiles/genSudoSolver.dir/clean
 CMakeFiles/geneticSudokuSolve.dir/all: src/CMakeFiles/genSudoSolver.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/geneticSudokuSolve.dir/build.make CMakeFiles/geneticSudokuSolve.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/geneticSudokuSolve.dir/build.make CMakeFiles/geneticSudokuSolve.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles --progress-num=3,4 "Built target geneticSudokuSolve"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles --progress-num=4,5 "Built target geneticSudokuSolve"
 .PHONY : CMakeFiles/geneticSudokuSolve.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/geneticSudokuSolve.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/geneticSudokuSolve.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles 0
 .PHONY : CMakeFiles/geneticSudokuSolve.dir/rule
@@ -124,12 +124,12 @@ CMakeFiles/geneticSudokuSolve.dir/clean:
 src/CMakeFiles/genSudoSolver.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/genSudoSolver.dir/build.make src/CMakeFiles/genSudoSolver.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/genSudoSolver.dir/build.make src/CMakeFiles/genSudoSolver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles --progress-num=1,2 "Built target genSudoSolver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles --progress-num=1,2,3 "Built target genSudoSolver"
 .PHONY : src/CMakeFiles/genSudoSolver.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/genSudoSolver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/genSudoSolver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles 0
 .PHONY : src/CMakeFiles/genSudoSolver.dir/rule

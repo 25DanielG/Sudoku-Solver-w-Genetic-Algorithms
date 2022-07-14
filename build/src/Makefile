@@ -154,6 +154,30 @@ libGenSudoSolver.cc.s:
 	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genSudoSolver.dir/build.make src/CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.s
 .PHONY : libGenSudoSolver.cc.s
 
+lib_sudosolver.o: lib_sudosolver.cc.o
+.PHONY : lib_sudosolver.o
+
+# target to build an object file
+lib_sudosolver.cc.o:
+	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genSudoSolver.dir/build.make src/CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.o
+.PHONY : lib_sudosolver.cc.o
+
+lib_sudosolver.i: lib_sudosolver.cc.i
+.PHONY : lib_sudosolver.i
+
+# target to preprocess a source file
+lib_sudosolver.cc.i:
+	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genSudoSolver.dir/build.make src/CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.i
+.PHONY : lib_sudosolver.cc.i
+
+lib_sudosolver.s: lib_sudosolver.cc.s
+.PHONY : lib_sudosolver.s
+
+# target to generate assembly for a file
+lib_sudosolver.cc.s:
+	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genSudoSolver.dir/build.make src/CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.s
+.PHONY : lib_sudosolver.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -166,6 +190,9 @@ help:
 	@echo "... libGenSudoSolver.o"
 	@echo "... libGenSudoSolver.i"
 	@echo "... libGenSudoSolver.s"
+	@echo "... lib_sudosolver.o"
+	@echo "... lib_sudosolver.i"
+	@echo "... lib_sudosolver.s"
 .PHONY : help
 
 

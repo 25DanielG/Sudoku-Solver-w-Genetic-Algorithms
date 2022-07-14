@@ -1,2 +1,2 @@
-/usr/bin/ar qc libgenSudoSolver.a CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.o
+/usr/bin/ar qc libgenSudoSolver.a CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.o CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.o
 /usr/bin/ranlib libgenSudoSolver.a

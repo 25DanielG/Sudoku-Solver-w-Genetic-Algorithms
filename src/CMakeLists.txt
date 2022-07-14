@@ -1,1 +1,1 @@
-add_library(genSudoSolver libGenSudoSolver.cc)
+add_library(genSudoSolver libGenSudoSolver.cc lib_sudosolver.cc)
