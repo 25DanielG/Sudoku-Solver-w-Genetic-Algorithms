@@ -19,12 +19,15 @@ int main() {
     }
     //                                          25%   25%    10%
     auto start = high_resolution_clock::now();
-    while(!genSudoSolver::geneticSolver(10000, 2500, 2500, 4, 10, 30, 300, initialBoard, boardSize));
+    while(!genSudoSolver::geneticSolver(10000, 2500, 2500, 4, 10, 500, 10000, initialBoard, boardSize));
     auto end = high_resolution_clock::now();
     auto duration = duration_cast<seconds>(end - start);
     cout << "Time taken for solution: " << duration.count() << " seconds." << endl;
 }
 /*
+----
+EASY
+----
 0 0 0 2 6 0 7 0 1
 6 8 0 0 7 0 0 9 0
 1 9 0 0 0 4 5 0 0
@@ -35,23 +38,26 @@ int main() {
 0 4 0 0 5 0 0 3 6
 7 0 3 0 1 8 0 0 0
 
-3 2 7 2 6 1 7 4 1 
-6 8 4 3 7 5 8 9 6 
-1 9 5 8 9 4 5 3 2 
-8 2 9 1 4 8 6 4 5 
-1 7 4 6 9 2 9 1 7 
-3 5 6 7 5 3 3 2 8 
-5 8 9 3 6 7 8 7 4 
-2 4 6 2 5 9 2 3 6 
-7 1 3 4 1 8 5 1 9
+Solved in 801 seconds (13 minutes 21 seconds)
+                        26 generations
+                        0 restarts
+                        5000 population size
 
-7 3 2 2 6 1 7 4 1 
-6 8 5 9 7 8 2 9 8 
-1 9 4 5 3 4 5 6 3 
-8 2 7 1 9 5 5 4 1 
-1 6 4 6 7 2 9 6 3 
-3 5 9 4 8 3 7 2 8 
-5 8 9 3 6 9 1 7 4 
-6 4 1 7 5 2 8 3 6 
-7 2 3 4 1 8 9 2 5
+-----------
+AI ESCARGOT
+-----------
+8 0 0 0 0 0 0 0 0
+0 0 3 6 0 0 0 0 0
+0 7 0 0 9 0 2 0 0 
+0 5 0 0 0 7 0 0 0
+0 0 0 0 4 5 7 0 0 
+0 0 0 1 0 0 0 3 0
+0 0 1 0 0 0 0 6 8
+0 0 8 5 0 0 0 1 0
+0 9 0 0 0 0 4 0 0
+
+Ran out of patience after more than 300 generations
+                                    2 restarts
+                                    2 hours
+                                    10000 population size
 */

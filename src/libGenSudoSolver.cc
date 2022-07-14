@@ -1,5 +1,5 @@
 #include "./genSudoSolver.h"
-#include<iostream>
+#include <iostream>
 #include <vector>
 #include <random>
 #include <algorithm>
@@ -57,14 +57,59 @@ bool genSudoSolver::geneticSolver(int pop_size, int s_rate, int ran_s_rate, int 
         ++generationNumber;
     }
 }
+
 vector<genSudoSolver::boardFitness> genSudoSolver::makeInitialPopulation(int pop_size, vector<vector<int> > board, int boardSize) { // Makes the initial population
+    vector<boardFitness> population(pop_size);
+    vector<int> availableNumbers(boardSize, 0); // vector containing the available numbers
+    for(int i = 1; i <= boardSize; ++i) {
+        availableNumbers[i - 1] = i;
+    }
+    int availableNumbersSize = availableNumbers.size();
+    for(int pop = 0; pop < pop_size; ++pop) { // Loop to generate initial population size
+        population[pop].singleBoard = board;
+        for(int rowRos = 0; rowRos < boardSize; rowRos += 3) { // vertical position (0, 3, 6)
+            for(int colPos = 0; colPos < boardSize; colPos += 3) { // horizontal position (0, 3, 6)
+                availableNumbersSize = availableNumbers.size();
+                for(int i = rowRos; i < rowRos + 3; ++i) {
+                    for(int j = colPos; j < colPos + 3; ++j) {
+                        if(population[pop].singleBoard[i][j] != 0) {
+                            vector<int>::iterator it = find(availableNumbers.begin(), availableNumbers.end(), population[pop].singleBoard[i][j]); // Removes a number if its already in the box
+                            int tmp = *it;
+                            availableNumbers.erase(it);
+                            availableNumbers.push_back(tmp);
+                            --availableNumbersSize;
+                        }
+                    }
+                }
+                for(int i = rowRos; i < rowRos + 3; ++i) {
+                    for(int j = colPos; j < colPos + 3; ++j) {
+                        if(population[pop].singleBoard[i][j] == 0) { // Generates index that points to an array of possible numbers
+                            std::random_device ranDevice; // Generates the random numbers to constantly make a different sudoku
+                            std::mt19937 gen2(ranDevice());
+                            std::uniform_int_distribution<int> boardDist(0, availableNumbersSize - 1);
+                            int tmpIndex = boardDist(gen2);
+                            population[pop].singleBoard[i][j] = availableNumbers[tmpIndex];
+                            int tmp = availableNumbers[tmpIndex]; // Moves tmpIndex element to end
+                            availableNumbers.erase(availableNumbers.begin() + tmpIndex);
+                            availableNumbers.push_back(tmp);
+                            --availableNumbersSize;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return population;
+}
+
+/*vector<genSudoSolver::boardFitness> genSudoSolver::makeInitialPopulation(int pop_size, vector<vector<int> > board, int boardSize) { // Makes the initial population
     vector<boardFitness> population(pop_size);
     for(int pop = 0; pop < pop_size; ++pop) { // Loop to generate initial population size
         population[pop].singleBoard = board;
         for(int i = 0; i < boardSize; ++i) {
             for(int j = 0; j < boardSize; ++j) {
                 if(population[pop].singleBoard[i][j] == 0) {
-                    std::random_device ranDevice; // Generates the random numbers to constantly make a different sudok
+                    std::random_device ranDevice; // Generates the random numbers to constantly make a different sudoku
                     std::mt19937 gen2(ranDevice());
                     std::uniform_int_distribution<int> boardDist(1, 9);
                     int tmp = boardDist(gen2); // make array of elements left and choose out of them
@@ -76,7 +121,7 @@ vector<genSudoSolver::boardFitness> genSudoSolver::makeInitialPopulation(int pop
         }
     }
     return population;
-}
+}*/
 
 vector<genSudoSolver::boardFitness> genSudoSolver::formSubsequentPopulation(int pop_size, int s_rate, int ran_s_rate, vector<genSudoSolver::boardFitness> prevPopulation, vector<vector<int> > board, int boardSize, int nb_children, int mutation_rate) { // Makes the next population
     vector<genSudoSolver::boardFitness> parents = selectParents(s_rate, ran_s_rate, prevPopulation, board, boardSize);
