@@ -38,7 +38,7 @@ bool genSudoSolver::geneticSolver(const int pop_size, const int s_rate, const in
             }
             return true;
         }
-        cout << "Generation number: " << generationNumber << "; Number of restarts: " << numRestarts << "; Best fitness level: " << currentPopulation[0].fitnessScore << "; Worst fitness level: " << currentPopulation[currentPopulation.size() - 1].fitnessScore << "; Pop size: " << currentPopulation.size() << endl;
+        cout << "Generation number: " << generationNumber << "; Number of restarts: " << numRestarts << "; Best fitness level: " << currentPopulation[currentPopulation.size() - 1].fitnessScore << "; Worst fitness level: " << currentPopulation[0].fitnessScore << "; Pop size: " << currentPopulation.size() << endl;
         currentPopulation = formSubsequentPopulation(pop_size, s_rate, ran_s_rate, currentPopulation, board, boardSize, num_children, mutation_rate);
         cout << "Formed subsequent population." << endl;
         ++generationNumber;
@@ -105,10 +105,10 @@ vector<genSudoSolver::boardFitness> genSudoSolver::formSubsequentPopulation(cons
 
 vector<genSudoSolver::boardFitness> genSudoSolver::selectParents(const int s_rate, const int ran_s_rate, vector<boardFitness> prevPopulation, const vector<vector<int> > board, const int boardSize) { // Selects the parents for the next generation
     vector<genSudoSolver::boardFitness> selectedParents; // Requires the previous population that is already sorted
-    for(int i = 0; i < s_rate; ++i) {
+    for(int i = 0; i < s_rate; ++i) { // Picks and erases elements from the back to prevent having to erase elements from the beginning
         // Chooses the most fit parents
-        selectedParents.push_back(prevPopulation[i]);
-        prevPopulation.erase(prevPopulation.begin());
+        selectedParents.push_back(*(prevPopulation.end() - 1));
+        prevPopulation.erase(prevPopulation.end() - 1);
     }
     for(int i = 0; i < ran_s_rate; ++i) {
         // Chooses some parents randomly
@@ -118,7 +118,10 @@ vector<genSudoSolver::boardFitness> genSudoSolver::selectParents(const int s_rat
         //cout << "Random parents population size: " << prevPopulation.size() << endl;
         int tmp = boardDist(gen2);
         selectedParents.push_back(prevPopulation[tmp]);
-        prevPopulation.erase(prevPopulation.begin() + tmp);
+        genSudoSolver::boardFitness tmpElement = prevPopulation[tmp];
+        prevPopulation[tmp] = *(prevPopulation.end() - 1);
+        *(prevPopulation.end() - 1) = tmpElement;
+        prevPopulation.erase(prevPopulation.end() - 1);
     }
     return selectedParents;
 }
@@ -155,7 +158,7 @@ vector<vector<int> > genSudoSolver::makeChild(vector<vector<int> > parentOne, ve
     // Mutates a child with a chance
     std::random_device ranDevice; // Generates the random numbers to constantly make a different sudoku
     std::mt19937 gen2(ranDevice());
-    std::uniform_int_distribution<int> boardDist(1, mutation_rate); // 0 corresponds to parentOne | 1 corresponds to parent 2
+    std::uniform_int_distribution<int> boardDist(1, 100 / mutation_rate); // 0 corresponds to parentOne | 1 corresponds to parent 2
     int randomNum = boardDist(gen2);
     int cnt = 0;
     if(randomNum == 1) {
@@ -228,5 +231,5 @@ int genSudoSolver::calculateFitness(const vector<vector<int> > board, const int 
     return fitness;
 }
 bool genSudoSolver::compareFunction(const genSudoSolver::boardFitness a, const genSudoSolver::boardFitness b) { // Compare function to sort
-    return a.fitnessScore > b.fitnessScore;
+    return a.fitnessScore < b.fitnessScore;
 }
