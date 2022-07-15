@@ -58,6 +58,7 @@ HARD
 5 0 3 7 0 0 0 0 8
 4 7 0 0 0 1 0 0 0
 
+Solved in 4201 seconds (70 minutes 1 second), 42 generations, 3 restarts, 25000 population size GA
 Solved in 0 seconds BACKTRACKING
 
 ------
@@ -89,3 +90,4 @@ AI ESCARGOT
 0 9 0 0 0 0 4 0 0
 
 Ran out of patience after more than ~25000 generations, ~28 restarts, 8.5 hours, 10000 population size
+(Haven't tested it with optimized code)
