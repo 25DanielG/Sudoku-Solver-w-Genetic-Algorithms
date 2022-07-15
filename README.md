@@ -42,7 +42,7 @@ MEDIUM
 0 0 0 0 0 8 0 0 4
 0 5 4 0 6 9 0 0 1
 
-Solved in 3715 seconds (61 minutes 55 seconds), 18 generations, 2 restarts, 25000 population size GA
+Solved in 1215 seconds (20 minutes 55 seconds), 18 generations, 2 restarts, 25000 population size GA
 Solved in 0 seconds BACKTRACKING
 
 ----

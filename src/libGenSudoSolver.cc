@@ -21,10 +21,10 @@ bool genSudoSolver::geneticSolver(const int pop_size, const int s_rate, const in
         }
         cout << "Calculated fitness levels." << endl;
         sort(currentPopulation.begin(), currentPopulation.end(), compareFunction);
-        if(currentPopulation[0].fitnessScore > prevMaxFitness) {
-            prevMaxFitness = currentPopulation[0].fitnessScore;
+        if(currentPopulation[currentPopulation.size() - 1].fitnessScore > prevMaxFitness) {
+            prevMaxFitness = currentPopulation[currentPopulation.size() - 1].fitnessScore;
             prevMaxGeneration = generationNumber;
-        } else if(generationNumber - prevMaxFitness >= n_restart_after) { // Restarts after # of generations w/out improvement
+        } else if(generationNumber - prevMaxGeneration >= n_restart_after) { // Restarts after # of generations w/out improvement
             cout << "Restarting after " << n_restart_after << " generations without improvement." << endl;
             return false;
         }
