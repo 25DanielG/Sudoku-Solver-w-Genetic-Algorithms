@@ -24,13 +24,13 @@ int main() {
     bool ga = true;
 
     // PARAMETERS
-    const int populationSize = 10000; // Population size
+    const int populationSize = 25000; // Population size
     int selectionRateChance = 25; // Percent chance
     int randomRateChance = 25; // Percent chance
     int numberChildren = 4; // Number of children per pair of parents
     int mutationRate = 25; // Percent chance
-    int restartAfterNImprovement = 25; // Restart after N generations without improvement
-    int maxGenerationCap = 100; // Max generation cap
+    int restartAfterNImprovement = 30; // Restart after N generations without improvement
+    int maxGenerationCap = 500; // Max generation cap
 
     int multiple = populationSize / 100;
     selectionRateChance *= multiple;
