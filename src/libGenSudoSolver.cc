@@ -28,11 +28,11 @@ bool genSudoSolver::geneticSolver(const int pop_size, const int s_rate, const in
             cout << "Restarting after " << n_restart_after << " generations without improvement." << endl;
             return false;
         }
-        if(currentPopulation[0].fitnessScore == 81) { // there is a solution
+        if(currentPopulation[currentPopulation.size() - 1].fitnessScore == 81) { // there is a solution
             cout << "Found a solution" << endl << "-----------------" << endl;
             for(int i = 0; i < boardSize; ++i) {
                 for(int j = 0; j < boardSize; ++j) {
-                    cout << currentPopulation[0].singleBoard[i][j] << " ";
+                    cout << currentPopulation[currentPopulation.size() - 1].singleBoard[i][j] << " ";
                 }
                 cout << endl;
             }
@@ -162,24 +162,33 @@ vector<vector<int> > genSudoSolver::makeChild(vector<vector<int> > parentOne, ve
     int randomNum = boardDist(gen2);
     int cnt = 0;
     if(randomNum == 1) {
-        child = mutateChild(child, boardSize);
+        child = mutateChild(board, child, boardSize);
     }
     return child;
 }
 
-vector<vector<int> > genSudoSolver::mutateChild(vector<vector<int> > child, const int boardSize) { // Mutates the child
+vector<vector<int> > genSudoSolver::mutateChild(vector<vector<int> > board, vector<vector<int> > child, const int boardSize) { // Mutates the child
     std::random_device ranDevice; // Generates the random numbers to constantly make a different sudoku
     std::mt19937 gen2(ranDevice());
     std::uniform_int_distribution<int> boardDist(0, 8);
-    int switchOne = boardDist(gen2), switchTwo = boardDist(gen2);
-    int rowPosOne = switchOne / 3, rowPosTwo = switchTwo / 3;
-    vector<vector<int> > updated(boardSize, vector<int>(boardSize, 0));
-    int colPosOne = switchOne - (3 * rowPosOne), colPosTwo = switchTwo - (3 * rowPosTwo);
-    for(int i = 0; i < 3; ++i) {
-        for(int j = 0; j < 3; ++j) {
-            child = swapTwoElements(rowPosOne * 3 + i, colPosOne * 3 + j, rowPosTwo * 3 + i, colPosTwo * 3 + j, child);
+    int switchOne = boardDist(gen2);
+    int rowPosOne = switchOne / 3;
+    int colPosOne = switchOne - (3 * rowPosOne);
+    int tmpOne = 0, tmpTwo = 0, rPosOne = 0, rPosTwo = 0, cPosOne = 0, cPosTwo = 0;
+    while(true) {
+        tmpOne = boardDist(gen2);
+        tmpTwo = boardDist(gen2);
+        //cout << tmpOne << " " << tmpTwo << endl;
+        rPosOne = tmpOne / 3, rPosTwo = tmpTwo / 3;
+        cPosOne = tmpOne - (3 * rPosOne), cPosTwo = tmpTwo - (3 * rPosTwo);
+        if(board[3 * rowPosOne + rPosOne][3 * colPosOne + cPosOne] == 0 && board[3 * rowPosOne + rPosTwo][3 * colPosOne + cPosTwo] == 0) {
+            break;
         }
     }
+    int temporary = child[3 * rowPosOne + rPosOne][3 * colPosOne + cPosOne];
+    child[3 * rowPosOne + rPosOne][3 * colPosOne + cPosOne] = child[3 * rowPosOne + rPosTwo][3 * colPosOne + cPosTwo];
+    child[3 * rowPosOne + rPosTwo][3 * colPosOne + cPosTwo] = temporary;
+    //child = swapTwoElements(3 * rowPosOne + rPosOne, 3 * colPosOne + cPosOne, 3 * rowPosOne + rPosTwo, 3 * colPosOne + cPosTwo, child);
     return child;
 }
 
@@ -233,3 +242,26 @@ int genSudoSolver::calculateFitness(const vector<vector<int> > board, const int 
 bool genSudoSolver::compareFunction(const genSudoSolver::boardFitness a, const genSudoSolver::boardFitness b) { // Compare function to sort
     return a.fitnessScore < b.fitnessScore;
 }
+/*
+
+4 5 7 2 6 1 7 8 1 
+6 8 2 9 7 5 2 9 4 
+1 9 3 8 3 4 5 3 6 
+8 2 9 1 9 4 1 4 7 
+1 6 4 6 7 2 9 3 6 
+7 5 3 5 8 3 5 2 8 
+2 8 9 3 7 9 5 7 4 
+5 4 1 2 5 4 1 3 6 
+7 6 3 6 1 8 2 8 9
+
+7 5 4 2 6 1 7 4 1
+6 8 3 3 7 9 3 9 6
+1 9 2 8 5 4 5 2 8
+8 2 7 1 9 5 3 4 6
+1 6 4 6 7 2 9 1 7
+9 5 3 8 4 3 5 2 8
+2 8 9 3 7 9 1 7 4
+5 4 6 2 5 6 5 3 6
+7 1 3 4 1 8 8 2 9
+
+*/

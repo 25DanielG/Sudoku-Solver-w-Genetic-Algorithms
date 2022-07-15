@@ -20,7 +20,7 @@ namespace genSudoSolver {
     // Makes children from two parents
     vector<vector<int> > makeChild(vector<vector<int> > parentOne, vector<vector<int> > parentTwo, const vector<vector<int> > board, const int boardSize, const int nb_children, const int mutation_rate);
     // Mutates the child after a chance
-    vector<vector<int> > mutateChild(vector<vector<int> > child, const int boardSize);
+    vector<vector<int> > mutateChild(vector<vector<int> > board, vector<vector<int> > child, const int boardSize);
     // Swaps to elements in 2d vectors
     vector<vector<int> > swapTwoElements(const int rowIndexOne, const int colIndexOne, const int rowIndexTwo, const int colIndexTwo, vector<vector<int> > first);
     bool numberInColumn(const int boardSize, const vector<vector<int> > board, const int row, const int col, const int n); // checks if a number is in the column

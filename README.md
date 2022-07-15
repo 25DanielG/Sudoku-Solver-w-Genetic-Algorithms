@@ -4,6 +4,13 @@ This project is an interesting experiment of solving sudoku with a genetic algor
 Results (Population Size: 10000, Selection Rate: 25%, Random selection rate 25%, Mutation rate: 10%, # of children: 4)
         Limits vary based on task
 
+Major Optimizations:
+    Made parent selection faster (I previously was erasing elements in the middle of a vector making the function O(n^2))
+    Instead I loop from the end to make the selection fast
+
+    Made the mutation algorithm switch two values in a box rather than two whole boxes
+    The previous mutation algorithm hurt the fitness level
+
 ----
 EASY
 ----
@@ -17,8 +24,9 @@ EASY
 0 4 0 0 5 0 0 3 6
 7 0 3 0 1 8 0 0 0
 
-Solved in 801 seconds (13 minutes 21 seconds), 26 generations, 0 restarts, 5000 population size GA
-Solved in 551 seconds (9 minutes 11 seconds), 19 generations, 0 restarts, 10000 population size GA
+Solved in 23 seconds (0 minutes 23 seconds), 11 generations, 0 restarts, 2500 population size GA
+Solved in 43 seconds (0 minutes 43 seconds), 10 generations, 0 restarts, 5000 population size GA
+Solved in 78 seconds (1 minutes 18 seconds), 9 generations, 0 restarts, 10000 population size GA
 Solved in 0 seconds BACKTRACKING
 
 ------

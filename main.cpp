@@ -24,7 +24,7 @@ int main() {
     bool ga = true;
 
     // PARAMETERS
-    const int populationSize = 20000; // Population size
+    const int populationSize = 10000; // Population size
     int selectionRateChance = 25; // Percent chance
     int randomRateChance = 25; // Percent chance
     int numberChildren = 4; // Number of children per pair of parents
