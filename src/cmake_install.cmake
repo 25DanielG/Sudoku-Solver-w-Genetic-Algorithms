@@ -1,4 +1,4 @@
-# Install script for directory: /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src
+# Install script for directory: /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -242,26 +242,3 @@ int genSudoSolver::calculateFitness(const vector<vector<int> > board, const int 
 bool genSudoSolver::compareFunction(const genSudoSolver::boardFitness a, const genSudoSolver::boardFitness b) { // Compare function to sort
     return a.fitnessScore < b.fitnessScore;
 }
-/*
-
-4 5 7 2 6 1 7 8 1 
-6 8 2 9 7 5 2 9 4 
-1 9 3 8 3 4 5 3 6 
-8 2 9 1 9 4 1 4 7 
-1 6 4 6 7 2 9 3 6 
-7 5 3 5 8 3 5 2 8 
-2 8 9 3 7 9 5 7 4 
-5 4 1 2 5 4 1 3 6 
-7 6 3 6 1 8 2 8 9
-
-7 5 4 2 6 1 7 4 1
-6 8 3 3 7 9 3 9 6
-1 9 2 8 5 4 5 2 8
-8 2 7 1 9 5 3 4 6
-1 6 4 6 7 2 9 1 7
-9 5 3 8 4 3 5 2 8
-2 8 9 3 7 9 1 7 4
-5 4 6 2 5 6 5 3 6
-7 1 3 4 1 8 8 2 9
-
-*/

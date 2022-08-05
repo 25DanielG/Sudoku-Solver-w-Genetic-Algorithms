@@ -29,7 +29,7 @@ int main() {
     int randomRateChance = 25; // Percent chance
     int numberChildren = 4; // Number of children per pair of parents
     int mutationRate = 25; // Percent chance
-    int restartAfterNImprovement = 30; // Restart after N generations without improvement
+    int restartAfterNImprovement = 50; // Restart after N generations without improvement
     int maxGenerationCap = 500; // Max generation cap
 
     int multiple = populationSize / 100;

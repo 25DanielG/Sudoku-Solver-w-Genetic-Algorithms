@@ -1,4 +1,4 @@
-# Install script for directory: /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms
+# Install script for directory: /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src/cmake_install.cmake")
+  include("/Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

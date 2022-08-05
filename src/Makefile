@@ -57,10 +57,10 @@ RM = /opt/homebrew/Cellar/cmake/3.22.0/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms
+CMAKE_SOURCE_DIR = /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms
+CMAKE_BINARY_DIR = /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms && $(CMAKE_COMMAND) -E cmake_progress_start /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src//CMakeFiles/progress.marks
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles 0
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms && $(CMAKE_COMMAND) -E cmake_progress_start /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src//CMakeFiles/progress.marks
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/genSudoSolver.dir/rule:
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/genSudoSolver.dir/rule
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/genSudoSolver.dir/rule
 .PHONY : src/CMakeFiles/genSudoSolver.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ genSudoSolver: src/CMakeFiles/genSudoSolver.dir/rule
 
 # fast build rule for target.
 genSudoSolver/fast:
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genSudoSolver.dir/build.make src/CMakeFiles/genSudoSolver.dir/build
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genSudoSolver.dir/build.make src/CMakeFiles/genSudoSolver.dir/build
 .PHONY : genSudoSolver/fast
 
 libGenSudoSolver.o: libGenSudoSolver.cc.o
@@ -135,7 +135,7 @@ libGenSudoSolver.o: libGenSudoSolver.cc.o
 
 # target to build an object file
 libGenSudoSolver.cc.o:
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genSudoSolver.dir/build.make src/CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.o
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genSudoSolver.dir/build.make src/CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.o
 .PHONY : libGenSudoSolver.cc.o
 
 libGenSudoSolver.i: libGenSudoSolver.cc.i
@@ -143,7 +143,7 @@ libGenSudoSolver.i: libGenSudoSolver.cc.i
 
 # target to preprocess a source file
 libGenSudoSolver.cc.i:
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genSudoSolver.dir/build.make src/CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.i
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genSudoSolver.dir/build.make src/CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.i
 .PHONY : libGenSudoSolver.cc.i
 
 libGenSudoSolver.s: libGenSudoSolver.cc.s
@@ -151,7 +151,7 @@ libGenSudoSolver.s: libGenSudoSolver.cc.s
 
 # target to generate assembly for a file
 libGenSudoSolver.cc.s:
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genSudoSolver.dir/build.make src/CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.s
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genSudoSolver.dir/build.make src/CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.s
 .PHONY : libGenSudoSolver.cc.s
 
 lib_sudosolver.o: lib_sudosolver.cc.o
@@ -159,7 +159,7 @@ lib_sudosolver.o: lib_sudosolver.cc.o
 
 # target to build an object file
 lib_sudosolver.cc.o:
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genSudoSolver.dir/build.make src/CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.o
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genSudoSolver.dir/build.make src/CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.o
 .PHONY : lib_sudosolver.cc.o
 
 lib_sudosolver.i: lib_sudosolver.cc.i
@@ -167,7 +167,7 @@ lib_sudosolver.i: lib_sudosolver.cc.i
 
 # target to preprocess a source file
 lib_sudosolver.cc.i:
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genSudoSolver.dir/build.make src/CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.i
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genSudoSolver.dir/build.make src/CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.i
 .PHONY : lib_sudosolver.cc.i
 
 lib_sudosolver.s: lib_sudosolver.cc.s
@@ -175,7 +175,7 @@ lib_sudosolver.s: lib_sudosolver.cc.s
 
 # target to generate assembly for a file
 lib_sudosolver.cc.s:
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genSudoSolver.dir/build.make src/CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.s
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/genSudoSolver.dir/build.make src/CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.s
 .PHONY : lib_sudosolver.cc.s
 
 # Help Target
@@ -204,6 +204,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

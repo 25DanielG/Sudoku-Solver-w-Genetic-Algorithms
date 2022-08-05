@@ -53,10 +53,10 @@ RM = /opt/homebrew/Cellar/cmake/3.22.0/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms
+CMAKE_SOURCE_DIR = /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms
+CMAKE_BINARY_DIR = /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/genSudoSolver.dir/depend.make
@@ -72,30 +72,30 @@ include src/CMakeFiles/genSudoSolver.dir/flags.make
 src/CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.o: src/CMakeFiles/genSudoSolver.dir/flags.make
 src/CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.o: src/libGenSudoSolver.cc
 src/CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.o: src/CMakeFiles/genSudoSolver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.o"
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.o -MF CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.o.d -o CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.o -c /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src/libGenSudoSolver.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.o"
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.o -MF CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.o.d -o CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.o -c /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src/libGenSudoSolver.cc
 
 src/CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.i"
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src/libGenSudoSolver.cc > CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.i
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src/libGenSudoSolver.cc > CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.i
 
 src/CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.s"
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src/libGenSudoSolver.cc -o CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.s
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src/libGenSudoSolver.cc -o CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.s
 
 src/CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.o: src/CMakeFiles/genSudoSolver.dir/flags.make
 src/CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.o: src/lib_sudosolver.cc
 src/CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.o: src/CMakeFiles/genSudoSolver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.o"
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.o -MF CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.o.d -o CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.o -c /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src/lib_sudosolver.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.o"
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.o -MF CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.o.d -o CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.o -c /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src/lib_sudosolver.cc
 
 src/CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.i"
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src/lib_sudosolver.cc > CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.i
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src/lib_sudosolver.cc > CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.i
 
 src/CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.s"
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src/lib_sudosolver.cc -o CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.s
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src/lib_sudosolver.cc -o CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.s
 
 # Object files for target genSudoSolver
 genSudoSolver_OBJECTS = \
@@ -109,19 +109,19 @@ src/libgenSudoSolver.a: src/CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.o
 src/libgenSudoSolver.a: src/CMakeFiles/genSudoSolver.dir/lib_sudosolver.cc.o
 src/libgenSudoSolver.a: src/CMakeFiles/genSudoSolver.dir/build.make
 src/libgenSudoSolver.a: src/CMakeFiles/genSudoSolver.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libgenSudoSolver.a"
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src && $(CMAKE_COMMAND) -P CMakeFiles/genSudoSolver.dir/cmake_clean_target.cmake
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/genSudoSolver.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libgenSudoSolver.a"
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src && $(CMAKE_COMMAND) -P CMakeFiles/genSudoSolver.dir/cmake_clean_target.cmake
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/genSudoSolver.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/CMakeFiles/genSudoSolver.dir/build: src/libgenSudoSolver.a
 .PHONY : src/CMakeFiles/genSudoSolver.dir/build
 
 src/CMakeFiles/genSudoSolver.dir/clean:
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src && $(CMAKE_COMMAND) -P CMakeFiles/genSudoSolver.dir/cmake_clean.cmake
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src && $(CMAKE_COMMAND) -P CMakeFiles/genSudoSolver.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/genSudoSolver.dir/clean
 
 src/CMakeFiles/genSudoSolver.dir/depend:
-	cd /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src/CMakeFiles/genSudoSolver.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src/CMakeFiles/genSudoSolver.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/genSudoSolver.dir/depend
 

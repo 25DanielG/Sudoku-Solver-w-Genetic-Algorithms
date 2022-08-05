@@ -1,6 +1,6 @@
 src/CMakeFiles/genSudoSolver.dir/libGenSudoSolver.cc.o: \
-  /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src/libGenSudoSolver.cc \
-  /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src/./genSudoSolver.h \
+  /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src/libGenSudoSolver.cc \
+  /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src/./genSudoSolver.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/vector \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__config_site \

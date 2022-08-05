@@ -1,5 +1,5 @@
 CMakeFiles/geneticSudokuSolve.dir/main.cpp.o: \
-  /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/main.cpp \
+  /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/main.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__config_site \
@@ -416,5 +416,5 @@ CMakeFiles/geneticSudokuSolve.dir/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/vector \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__split_buffer \
-  /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/./src/genSudoSolver.h \
-  /Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/./src/sudosolver.h
+  /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/./src/genSudoSolver.h \
+  /Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/./src/sudosolver.h

@@ -8,12 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/main.cpp" "CMakeFiles/geneticSudokuSolve.dir/main.cpp.o" "gcc" "CMakeFiles/geneticSudokuSolve.dir/main.cpp.o.d"
+  "/Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/main.cpp" "CMakeFiles/geneticSudokuSolve.dir/main.cpp.o" "gcc" "CMakeFiles/geneticSudokuSolve.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/Users/danielgergov/Documents/C++/Sudoku-Solver-w-Genetic-Algorithms/src/CMakeFiles/genSudoSolver.dir/DependInfo.cmake"
+  "/Users/danielgergov/Documents/Coding/C++/Sudoku-Solver-w-Genetic-Algorithms/src/CMakeFiles/genSudoSolver.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
